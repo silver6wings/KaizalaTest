@@ -100,11 +100,19 @@
     float width = [_txtWidth.text intValue];
     float height = [_txtHeight.text intValue];
     
-    UIImage * image = [self compressImage:_image ratio:ratio];
+    UIImage * image = [_image copy];
     
     if (width > 0 && height > 0)
     {
+        NSLog(@"%f", width);
+        NSLog(@"%f", height);
         image = [self scaleToSize:image size:CGSizeMake(width, height)];
+    }
+    
+    if (ratio > 0)
+    {
+        NSLog(@"%f", ratio);
+        image = [self compressImage:image ratio:ratio];
     }
     
     [self refreshImageView:image];

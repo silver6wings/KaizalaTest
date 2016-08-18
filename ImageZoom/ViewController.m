@@ -167,13 +167,15 @@
     
     NSData *data = UIImagePNGRepresentation(_image);
     
-    NSData *aes = [data AES128EncryptWithKey:KEY];
+        NSData *aes = [data AES128EncryptedDataWithKey:KEY];
     
-    NSString *str = [NSData hexStringFromData:aes];
+            NSString *str = [NSData hexStringFromData:aes];
     
-    NSData *aes2 = [NSData dataFromHexString:str];
+                NSLog(@"[%@]", str);
     
-    NSData *aes3 = [aes2 AES128DecryptWithKey:KEY];
+            NSData *aes2 = [NSData dataFromHexString:str];
+    
+        NSData *aes3 = [aes2 AES128DecryptedDataWithKey:KEY];
     
     _image = [UIImage imageWithData:aes3];
     
@@ -181,6 +183,5 @@
     _lbSize.text = [NSString stringWithFormat:@"PNG:%.2fK", data.length/1024.0f];
 
 }
-
 
 @end

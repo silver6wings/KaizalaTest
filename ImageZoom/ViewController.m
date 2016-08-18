@@ -7,8 +7,10 @@
 //
 
 #define EGHE_Y 110
+#define KEY @"1234567812345678"
 
 #import "ViewController.h"
+#import "NSData+AES128.h"
 
 @interface ViewController ()
 
@@ -72,6 +74,7 @@
 
 - (void)getImageFromIpc:(id)sender
 {
+    NSLog(@"get");
     // 1.判断相册是否可以打开
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) return;
     // 2. 创建图片选择控制器
@@ -96,6 +99,8 @@
 
 - (void)setImageCompress:(id)sender
 {
+    NSLog(@"set");
+    
     float ratio = [_txtJPG.text floatValue];
     float width = [_txtWidth.text intValue];
     float height = [_txtHeight.text intValue];
@@ -159,9 +164,20 @@
     
     // 设置图片
     _image = info[UIImagePickerControllerOriginalImage];
-    [self refreshImageView:_image];
     
-    NSData *data = UIImagePNGRepresentation(self.image);
+    NSData *data = UIImagePNGRepresentation(_image);
+    
+    NSData *aes = [data AES128EncryptWithKey:KEY];
+    
+    NSString *str = [NSData hexStringFromData:aes];
+    
+    NSData *aes2 = [NSData dataFromHexString:str];
+    
+    NSData *aes3 = [aes2 AES128DecryptWithKey:KEY];
+    
+    _image = [UIImage imageWithData:aes3];
+    
+    [self refreshImageView:_image];
     _lbSize.text = [NSString stringWithFormat:@"PNG:%.2fK", data.length/1024.0f];
 
 }

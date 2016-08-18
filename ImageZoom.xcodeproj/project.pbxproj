@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1947EC081D655E8200C050AD /* NSData+AES128.m in Sources */ = {isa = PBXBuildFile; fileRef = 1947EC071D655E8200C050AD /* NSData+AES128.m */; };
 		19FA100B1D61D0620093A9D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FA100A1D61D0620093A9D3 /* main.m */; };
 		19FA100E1D61D0620093A9D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FA100D1D61D0620093A9D3 /* AppDelegate.m */; };
 		19FA10111D61D0620093A9D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FA10101D61D0620093A9D3 /* ViewController.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1947EC061D655E8200C050AD /* NSData+AES128.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES128.h"; sourceTree = "<group>"; };
+		1947EC071D655E8200C050AD /* NSData+AES128.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES128.m"; sourceTree = "<group>"; };
 		19FA10061D61D0620093A9D3 /* ImageZoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageZoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19FA100A1D61D0620093A9D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		19FA100C1D61D0620093A9D3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -67,6 +70,8 @@
 				19FA10171D61D0620093A9D3 /* LaunchScreen.storyboard */,
 				19FA101A1D61D0620093A9D3 /* Info.plist */,
 				19FA10091D61D0620093A9D3 /* Supporting Files */,
+				1947EC061D655E8200C050AD /* NSData+AES128.h */,
+				1947EC071D655E8200C050AD /* NSData+AES128.m */,
 			);
 			path = ImageZoom;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1947EC081D655E8200C050AD /* NSData+AES128.m in Sources */,
 				19FA10111D61D0620093A9D3 /* ViewController.m in Sources */,
 				19FA100E1D61D0620093A9D3 /* AppDelegate.m in Sources */,
 				19FA100B1D61D0620093A9D3 /* main.m in Sources */,
